@@ -2,29 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Ensures the page uses UTF-8 encoding for better compatibility -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Makes the page responsive across different devices -->
+
     <title>Employee Dashboard</title>
+    <!-- Title that appears in the browser tab -->
+
+    <!-- Linking external stylesheet stored in Flask's static folder -->
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
+
   <body>
+    <!-- ================= Header Section ================= -->
     <header>
       <h1>Employee Management System</h1>
+      <!-- Main title displayed at the top of the page -->
     </header>
+
+    <!-- ================= Main Content Section ================= -->
     <main>
+      <!-- Flask flash message block for success/error/info notifications -->
       {% with messages = get_flashed_messages(with_categories=true) %} {% if
       messages %}
       <ul class="flash-messages">
         {% for category, message in messages %}
         <li class="flash {{ category }}">{{ message }}</li>
+        <!-- Each flash message is styled based on its category -->
         {% endfor %}
       </ul>
-      {% endif %} {% endwith %} {% block content %}{% endblock %}
+      {% endif %} {% endwith %}
+
+      <!-- Placeholder for dynamic page content injected by Flask templates -->
+      {% block content %}{% endblock %}
     </main>
+
+    <!-- ================= Footer Section ================= -->
     <footer>
       <p>&copy; 2025 Employee Dashboard</p>
+      <!-- Footer text with copyright -->
     </footer>
   </body>
 </html>

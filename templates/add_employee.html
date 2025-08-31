@@ -1,0 +1,55 @@
+{% extends "base.html" %} {# Reuse the base layout (common header, footer,
+styles, etc.) #} {% block content %}
+<div class="container">
+  <h2>Add New Employee</h2>
+
+  <!-- 
+    This form sends data to the /add route using POST method 
+    The Flask route `/add` (in app.py) will handle this request 
+  -->
+  <form action="/add" method="POST">
+    <!-- Input for Employee Name -->
+    <label>Name:</label>
+    <input type="text" name="name" required />
+    <br /><br />
+
+    <!-- Input for Employee Email -->
+    <label>Email:</label>
+    <input type="email" name="email" required />
+    <br /><br />
+
+    <!-- Input for Employee Position/Job Role -->
+    <label>Position:</label>
+    <input type="text" name="position" required />
+    <br /><br />
+
+    <!-- Input for Salary (float values allowed with step="0.01") -->
+    <label>Salary:</label>
+    <input type="number" step="0.01" name="salary" required />
+    <br /><br />
+
+    <!-- Input for Employee Address -->
+    <label>Address:</label>
+    <input type="text" name="address" required />
+    <br /><br />
+
+    <!-- Input for Employee Joining Date (date picker) -->
+    <label>Joining Date:</label>
+    <input type="date" name="joining_date" required />
+    <br /><br />
+
+    <!-- Input for Employee Ending Date (optional, so no required attribute) -->
+    <label>Ending Date:</label>
+    <input type="date" name="end_date" />
+    <br /><br />
+
+    <!-- Submit button to save employee record -->
+    <button type="submit" class="btn">Save</button>
+  </form>
+
+  <br />
+
+  <!-- Link to go back to dashboard (employee list page) -->
+  <a href="/" class="btn">Back to Employee List</a>
+</div>
+{% endblock %}
