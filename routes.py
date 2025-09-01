@@ -78,6 +78,7 @@ def init_app(app):
             # Collect form data submitted by the user
             name = request.form['name']
             email = request.form['email']
+            phone = request.form['phone']
             position = request.form['position']
             salary = float(request.form['salary']) if request.form['salary'] else 0
             address = request.form['address']
@@ -88,6 +89,7 @@ def init_app(app):
             new_employee = Employee(
                 name=name,
                 email=email,
+                phone = phone,
                 position=position,
                 salary=salary,
                 address=address,
@@ -120,6 +122,7 @@ def init_app(app):
             # Update the employee object with new data from the form
             employee.name = request.form['name']
             employee.email = request.form['email']
+            employee.phone = request.form['phone']
             employee.position = request.form['position']
             employee.salary = float(request.form['salary']) if request.form['salary'] else 0
             employee.address = request.form['address']

@@ -8,14 +8,15 @@
   <table id="employeeTable">
     <thead>
       <tr>
-        <!-- Sortable columns (click to sort using JavaScript function) -->
-        <th onclick="sortTable(0)">Name ⬍</th>
+        <th>Sl. No</th>
+        <th onclick="sortTable(1)">Name ⬍</th>
         <th>Email</th>
+        <th>Phone</th>
         <th>Position</th>
-        <th onclick="sortTable(3)">Salary ⬍</th>
+        <th onclick="sortTable(5)">Salary ⬍</th>
         <th>Address</th>
-        <th onclick="sortTable(5)">Joining Date ⬍</th>
-        <th onclick="sortTable(6)">End Date ⬍</th>
+        <th onclick="sortTable(7)">Joining Date ⬍</th>
+        <th onclick="sortTable(8)">End Date ⬍</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -23,8 +24,11 @@
       <!-- Loop through all employees from backend -->
       {% for emp in employees %}
       <tr>
+        <td>{{ loop.index }}</td>
+        <!-- Sl. No (auto increments) -->
         <td>{{ emp.name }}</td>
         <td>{{ emp.email }}</td>
+        <td>{{ emp.phone }}</td>
         <td>{{ emp.position }}</td>
         <td>{{ emp.salary }}</td>
         <td>{{ emp.address }}</td>
