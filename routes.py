@@ -99,6 +99,8 @@ def init_app(app):
 
             # Add new employee to database
             db.session.add(new_employee)
+
+            # Saving the new data to the database and commiting it
             db.session.commit()
 
             # Show success message on the page

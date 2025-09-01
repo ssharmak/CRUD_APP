@@ -12,7 +12,7 @@ class Employee(db.Model):
     name = db.Column(db.String(100), nullable = False)
 
     # Employee email (cannot be NULL, max length 120 characters)
-    email = db.Column(db.String(120), nullable = False)
+    email = db.Column(db.String(120), unique = True, nullable = False)
 
     # Employee's phone number (cannot be null and repeated and it should be unique)
     phone = db.Column(db.String(15), unique = True, nullable = False)
